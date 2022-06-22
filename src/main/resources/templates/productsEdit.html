@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> Редактирование товара </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1> Редактирование товара</h1>
+    <div th:each="el : ${prod}">
+        <form  method="post">
+            <input type="text" th:value="${el.name}" id="name" name="name" class="form-control" placeholder="Введите наименование" required><br>
+            <input type="text" th:value="${el.category}" id="category" name="category" class="form-control" placeholder="Введите категорию" required><br>
+            <input type="text" th:value="${el.brandName}" id="brandName" name="brandName" class="form-control" placeholder="Введите бренд" required><br>
+            <input type="text" th:value="${el.color}" id="color" name="color" class="form-control" placeholder="Введите цвет" required><br>
+            <input type="text" th:value="${el.gender}" id="gender" name="gender" class="form-control" placeholder="Введите пол ребенка" required><br>
+            <input type="text" th:value="${el.price}" id="price" name="price" class="form-control" placeholder="Введите цену" required><br>
+
+            <button type="submit" class="btn btn-success"> Изменить</button>
+        </form>
+        <p><a href="/admin/addProduct">Назад</a></p>
+    </div>
+</div>
+
+</body>
+</html>
